@@ -24,7 +24,14 @@ javascript:
 				}
 				else
 				{
-					thelink += c[i].attributes["href"].value.substring(1);
+					if (c[i].attributes["href"].value.substring(0,1) == "/")
+					{
+						thelink += c[i].attributes["href"].value.substring(1);
+					}
+					else
+					{
+						thelink += c[i].attributes["href"].value;
+					}
 				}
 				if (c[i].tagName in a)
 				{
@@ -44,7 +51,14 @@ javascript:
 				}
 				else
 				{
-					thelink += c[i].attributes["src"].value.substring(1);
+					if (c[i].attributes["src"].value.substring(0,1) == "/")
+					{
+						thelink += c[i].attributes["src"].value.substring(1);
+					}
+					else
+					{
+						thelink += c[i].attributes["src"].value;
+					}
 				}
 				if (c[i].tagName in a)
 				{
