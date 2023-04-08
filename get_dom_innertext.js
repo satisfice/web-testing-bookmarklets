@@ -17,6 +17,10 @@ javascript:
 			try{dict[dom[i].tagName].push(dom[i].innerText)}
 			catch(err){dict[dom[i].tagName]=[dom[i].innerText]}
 		}
-		download(JSON.stringify(dict,null,2),"DOM_InnerText","application/json");
+		for (i in dict)
+		{
+			dict[i] = dict[i].sort();
+		}
+		download(JSON.stringify(dict, Object.keys(dict).sort(),2),"DOM_InnerText","application/json");
 	}
 )();

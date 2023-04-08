@@ -70,7 +70,11 @@ javascript:
 				}
 			}
 		}
-		download(JSON.stringify(a,null,2),"DOM_URIs","application/json");
+		for (i in a)
+		{
+			a[i] = a[i].sort();
+		}
+		download(JSON.stringify(a, Object.keys(a).sort(),2),"DOM_URIs","application/json");
 	}
 )();
 

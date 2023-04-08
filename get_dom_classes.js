@@ -32,6 +32,10 @@ javascript:
 				out[i].push(v);
 			}
 		}
-		download(JSON.stringify(out,null,2),"DOM_Classes","application/json");
+		for (i in out)
+		{
+			out[i] = out[i].sort();
+		}
+		download(JSON.stringify(out, Object.keys(out).sort(),2),"DOM_Classes","application/json");
 	}
 )();

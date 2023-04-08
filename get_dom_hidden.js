@@ -21,7 +21,11 @@ javascript:
 				catch(err){dict[dom[i].tagName]=[dom[i].outerHTML]}
 			}
 		}
-		download(JSON.stringify(dict,null,2),"DOM_hiddens","application/json");
+		for (i in dict)
+		{
+			dict[i] = dict[i].sort();
+		}
+		download(JSON.stringify(dict, Object.keys(dict).sort(),2),"DOM_hiddens","application/json");
 	}
 )();
 

@@ -21,7 +21,11 @@ javascript:
 				catch(err){dict[tag]=[dom[i].outerHTML]}
 			}
 		}
-		download(JSON.stringify(dict,null,2),"DOM_read_writes","application/json");
+		for (i in dict)
+		{
+			dict[i] = dict[i].sort();
+		}
+		download(JSON.stringify(dict, Object.keys(dict).sort(),2),"DOM_read_writes","application/json");
 	}
 )();
 

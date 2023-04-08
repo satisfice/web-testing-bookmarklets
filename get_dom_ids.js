@@ -36,6 +36,6 @@ javascript:
 				out[i].push(v);
 			}
 		}
-		download(JSON.stringify(out,null,2),"DOM_IDs","application/json");
+		download(JSON.stringify(out, Object.keys(out).sort(),2),"DOM_IDs","application/json");
 	}
 )();
