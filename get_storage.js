@@ -19,12 +19,23 @@ javascript:
 		const result_c = {};
 		for (var i = 0; i < localStorage.length; i++)
 		{
-			result_l[localStorage.key(i)] = localStorage.getItem(localStorage.key(i));
-		}		
+            try {
+    			result_l[localStorage.key(i)] = JSON.parse(localStorage.getItem(localStorage.key(i)));
+            }
+            catch {
+    			result_l[localStorage.key(i)] = localStorage.getItem(localStorage.key(i));
+            }
+        }		
 		for (var i = 0; i < sessionStorage.length; i++)
 		{
-			result_s[sessionStorage.key(i)] = sessionStorage.getItem(sessionStorage.key(i));
+            try {
+    			result_l[sessionStorage.key(i)] = JSON.parse(JSON.parse(sessionStorage.getItem(sessionStorage.key(i))));
+            }
+            catch {
+    			result_l[sessionStorage.key(i)] = sessionStorage.getItem(sessionStorage.key(i));
+            }
 		}
+		console.log(result_l);
 		window.cookieStore.getAll().then(
 			function (value)
 			{
