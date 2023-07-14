@@ -2,6 +2,13 @@ javascript:
 (
 	()=>
 	{
+		function downloadName()
+		{
+  			var hostname = window.location.hostname.substring(0, window.location.hostname.lastIndexOf('.')).replaceAll(".", "_");
+  			var pathname = window.location.pathname ? window.location.pathname.replaceAll('/', '_'): "_";
+	    		var filename = hostname + pathname + "_Storage";
+			return filename;
+		}
 		function download(text, name, type) 
 		{  
 			var a = document.createElement("a"); 
@@ -12,7 +19,7 @@ javascript:
 		}
 		function send(l,s,c)
 		{
-			download(JSON.stringify({"javascriptCookies":c,"localStorage":l,"sessionStorage":s},null,2),"Storage","application/json");
+			download(JSON.stringify({"javascriptCookies":c,"localStorage":l,"sessionStorage":s},null,2),downloadName(),"application/json");
 		}
 		const result_l = {};
 		const result_s = {};

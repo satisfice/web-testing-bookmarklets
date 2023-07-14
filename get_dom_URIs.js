@@ -2,6 +2,13 @@ javascript:
 (
 	()=>
 	{
+		function downloadName()
+		{
+  			var hostname = window.location.hostname.substring(0, window.location.hostname.lastIndexOf('.')).replaceAll(".", "_");
+  			var pathname = window.location.pathname ? window.location.pathname.replaceAll('/', '_'): "_";
+	    		var filename = hostname + pathname + "_DOM_URIs";
+			return filename;
+		}
 		function download(text, name, type) 
 		{  
 			var a = document.createElement("a"); 
@@ -74,7 +81,7 @@ javascript:
 		{
 			a[i] = a[i].sort();
 		}
-		download(JSON.stringify(a, Object.keys(a).sort(),2),"DOM_URIs","application/json");
+		download(JSON.stringify(a, Object.keys(a).sort(),2),downloadName(),"application/json");
 	}
 )();
 
