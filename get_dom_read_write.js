@@ -6,7 +6,7 @@ javascript:
 		{
   			var hostname = window.location.hostname.substring(0, window.location.hostname.lastIndexOf('.')).replaceAll(".", "_");
   			var pathname = window.location.pathname ? window.location.pathname.replaceAll('/', '_'): "_";
-	    		var filename = hostname + pathname + "_DOM_read_writes";
+	    		var filename = hostname + pathname + "_DOM_read_writes.json";
 			return filename;
 		}
 		function download(text, name, type) 
