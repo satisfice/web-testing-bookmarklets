@@ -10,6 +10,8 @@ Copy and paste the code for each bookmarklet into the body of a corresponding bo
 Go to any web page and run any of these bookmarklets by selecting the bookmark that you've set up for it.
 
 - **Get DOM:** grabs the entire DOM and collates it by tag name (i.e. all the form objects will be listed together). This bookmarklet is for a general breakdown of an entire page. It's a good start.
+- 
+- **Get DOM Raw:** grabs the entire DOM in HTML form.
 
 - **Get DOM URIs:** Lists every URI that it can find in the document, including links, image sources, iframes, etc. This is good for getting a sense of the dependencies.
 
