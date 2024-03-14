@@ -33,4 +33,3 @@ Go to any web page and run any of these bookmarklets by selecting the bookmark t
 
 - **Console Stamp:** This one dumps the following info to the console, which is useful during testing: current page title, current URL, current time, and any selected text on the page. It also prompts you in case you want to enter a note. Great for in situ notetaking. This is especially useful if you have enabled the Chrome debug log.
 
-In addition to the functionality described above, each of these bookmarklets also performs the function of the Console Stamp bookmarklet whenever you invoke it.
