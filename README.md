@@ -3,7 +3,7 @@ This is a set of bookmarklets I use for analyzing web applications for testing p
 
 ## Installation
 
-Copy and paste the code for each bookmarklet into the body of a corresponding bookmark that you create in your browser.
+Load the "installation_page.htm" file into your browser and drag each bookmark to your bookmarks bar. 
 
 ## Usage
 
@@ -33,4 +33,3 @@ Go to any web page and run any of these bookmarklets by selecting the bookmark t
 
 - **Console Stamp:** This one dumps the following info to the console, which is useful during testing: current page title, current URL, current time, and any selected text on the page. It also prompts you in case you want to enter a note. Great for in situ notetaking. This is especially useful if you have enabled the Chrome debug log.
 
-In addition to the functionality described above, each of these bookmarklets also performs the function of the Console Stamp bookmarklet whenever you invoke it.
