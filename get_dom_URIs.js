@@ -19,7 +19,7 @@ javascript:
 		}
 		c = document.querySelectorAll('*'); 
 		a = {}; 
-		for (i in c) 
+		for (i=0;i<c.length;i++) 
 		{
 			try {c[i].attributes["href"]} catch {continue}
 			if (c[i].attributes["href"] != null) 

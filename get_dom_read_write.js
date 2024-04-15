@@ -19,7 +19,7 @@ javascript:
 		}
 		dom = document.querySelectorAll('*:read-write'); 
 		const dict = {};
-		for (let i in dom)
+		for (i=0;i<dom.length;i++)
 		{
 			tag = dom[i].tagName;
 			if (tag != undefined && tag != "undefined")

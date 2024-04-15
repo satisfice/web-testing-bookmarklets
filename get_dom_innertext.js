@@ -19,7 +19,7 @@ javascript:
 		}
 		dom = document.getElementsByTagName("*");
 		const dict = {};
-		for (let i in dom)
+		for (i=0;i<dom.length;i++)
 		{
 			try{dict[dom[i].tagName].push(dom[i].innerText)}
 			catch(err){dict[dom[i].tagName]=[dom[i].innerText]}

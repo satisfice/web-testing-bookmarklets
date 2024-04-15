@@ -19,7 +19,7 @@ javascript:
 		}
 		dom = document.querySelectorAll('*[id]');
 		const dict = {};
-		for (i in dom)
+		for (i=0;i<dom.length;i++)
 		{
 			if (!(dom[i].tagName in dict))
 			{

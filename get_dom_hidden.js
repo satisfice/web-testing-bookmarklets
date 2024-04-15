@@ -19,7 +19,7 @@ javascript:
 		}
 		dom = document.querySelectorAll('*[style*="hidden"], *[style*="display:none"]'); 
 		const dict = {};
-		for (i in dom)
+		for (i=0;i<dom.length;i++)
 		{
 			tag = dom[i].tagName;
 			if (tag != undefined && tag != "undefined")
