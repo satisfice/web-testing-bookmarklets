@@ -25,6 +25,8 @@ Go to any web page and run any of these bookmarklets by selecting the bookmark t
 
 - **Get DOM IDs:** Lists every element of the DOM that has an ID, collated by tag name. ID's make GUI-level automation way easier. This is a bookmarklet to use for reviewing testability of the page.
 
+- **Get DOM Data Attributes:** Lists every element of the DOM that has an element that begins with "data-", collated by tag name. Data ID's make GUI-level automation way easier. This is a bookmarklet to use for reviewing testability of the page. See [HTML Spec](https://html.spec.whatwg.org/multipage/dom.html#attr-data-*)
+
 - **Get DOM Innertext:** Lists all the text associated with each element of the DOM. This is probably all the text that can appear on the page, other than stuff dynamically generated.
 
 - **Get DOM Read/Write:** Lists all the editable elements on the page. If a field is editable, then you will need to test by entering data into it.

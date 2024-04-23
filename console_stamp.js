@@ -1,6 +1,6 @@
 javascript: 
 (
-	()=>
+	async ()=>
 	{
 		the_title = document.title;
 		the_place = window.location.href;
@@ -10,13 +10,24 @@ javascript:
 		if (the_message != null)
 		{
 			json_version = {"time": the_time, "test notes":{"message": the_message, "title": the_title, "place": the_place, "text": the_text}};
-			data = window.localStorage.getItem("SatisficeCoverageReporter_events");
-			if (data !== null)
-			{
-				data_object = JSON.parse(data);
-				data_object.unshift(json_version);	
-				window.localStorage.setItem("SatisficeCoverageReporter_events",JSON.stringify(data_object));	
-			}
+
+            const dbName = 'SatisficeCoverageRecorder';
+            await window.indexedDB.databases().then(
+                (dbs) => {
+                    out = dbs.map((db)=>{return db.name == dbName;});
+                    if (out.includes(true)) {
+                        let db;
+                        const request = window.indexedDB.open(dbName);
+                        request.onsuccess = (event) => {
+                            db = event.target.result;
+                            const transaction = db.transaction(["Events"], "readwrite");
+                            const objectStore = transaction.objectStore("Events");
+                            const request = objectStore.add(json_version);
+                        }
+                    }                    
+                }
+            );
+
 			console.log(JSON.stringify(json_version) + "\n" 
 									 + "*** Test Stamp ***" 
 									 + "\n         TIME: " + the_time 
