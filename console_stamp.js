@@ -15,14 +15,18 @@ javascript:
             await window.indexedDB.databases().then(
                 (dbs) => {
                     out = dbs.map((db)=>{return db.name == dbName;});
-                    if (out.includes(true)) {
-                        let db;
-                        const request = window.indexedDB.open(dbName);
-                        request.onsuccess = (event) => {
-                            db = event.target.result;
-                            const transaction = db.transaction(["Events"], "readwrite");
-                            const objectStore = transaction.objectStore("Events");
-                            const request = objectStore.add(json_version);
+                    if (out.includes(true)) 
+						{
+							if (window.localStorage.getItem("SatisficeCoverageReporter_active") == "started")
+							{							
+								let db;
+								const request = window.indexedDB.open(dbName);
+								request.onsuccess = (event) => {
+									db = event.target.result;
+									const transaction = db.transaction(["Events"], "readwrite");
+									const objectStore = transaction.objectStore("Events");
+									const request = objectStore.add(json_version);
+							}
                         }
                     }                    
                 }
