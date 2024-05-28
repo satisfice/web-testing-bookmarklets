@@ -7,7 +7,7 @@ javascript:
 		the_place = window.location.href;
 		the_text = window.getSelection().toString();
 		the_time = Date().valueOf();
-		the_message = prompt("What news?");
+		the_message = prompt("What seems wrong?");
 		if (the_message != null)
 		{
 			json_version = {"time": the_time, "test notes":{"message": the_message, "title": the_title, "place": the_place, "text": the_text, "type": the_type}};

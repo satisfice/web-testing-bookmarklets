@@ -2,12 +2,12 @@ javascript:
 (
 	async ()=>
 	{
-		the_type = "note";
+		the_type = "session end";
 		the_title = document.title;
 		the_place = window.location.href;
 		the_text = window.getSelection().toString();
 		the_time = Date().valueOf();
-		the_message = prompt("What's up?");
+		the_message = prompt("Did you fulfill the charter?");
 		if (the_message != null)
 		{
 			json_version = {"time": the_time, "test notes":{"message": the_message, "title": the_title, "place": the_place, "text": the_text, "type": the_type}};
