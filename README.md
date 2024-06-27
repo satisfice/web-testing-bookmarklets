@@ -3,7 +3,7 @@ This is a set of bookmarklets I use for analyzing web applications for testing p
 
 ## Installation
 
-Load the "installation_page.htm" file into your browser and drag each bookmark to your bookmarks bar. 
+Load the "install_page.htm" file into your browser and drag each bookmark to your bookmarks bar. 
 
 ## Usage
 
