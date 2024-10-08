@@ -39,19 +39,26 @@ javascript:
 
 					openRequest.onsuccess = async (event) => {
 						const db = event.target.result;
-						const transaction = db.transaction(db.objectStoreNames, 'readonly');
-						const objectStoreNames = Array.from(db.objectStoreNames);
 						const databaseData = {};
+						if (db.objectStoreNames.length > 0)
+						{
+							const transaction = db.transaction(db.objectStoreNames, 'readonly');
+							const objectStoreNames = Array.from(db.objectStoreNames);
 
-						try {
-							for (const storeName of objectStoreNames) {
-								databaseData[storeName] = await getAllDataFromObjectStore(db, storeName);
+							try {
+								for (const storeName of objectStoreNames) {
+									databaseData[storeName] = await getAllDataFromObjectStore(db, storeName);
+								}
+								resolve(databaseData);
+							} catch (error) {
+								reject(error);
+							} finally {
+								db.close();
 							}
+						}
+						else
+						{
 							resolve(databaseData);
-						} catch (error) {
-							reject(error);
-						} finally {
-							db.close();
 						}
 					};
 
