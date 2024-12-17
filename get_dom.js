@@ -24,9 +24,18 @@ javascript:
 			try{dict[dom[i].tagName].push(dom[i].outerHTML)}
 			catch(err){dict[dom[i].tagName]=[dom[i].outerHTML]}
 		}
+		sortedkeys = Object.keys(dict).sort();
+		for (i in sortedkeys)
+		{
+			dict[sortedkeys[i]] = Object.keys(dict[sortedkeys[i]]).sort();
+		}
+		console.log(dict);
 		for (i in dict)
 		{
-			dict[i] = dict[i].sort();
+			for (j in dict[i])
+			{
+				console.log(i, j, dict[i][j]);
+			}
 		}
 		the_title = document.title;
 		the_place = window.location.href;
@@ -34,6 +43,6 @@ javascript:
 		the_time = Date().valueOf();
 		console.log("*** Test Stamp ***\n(Downloaded DOM)\n" + "TIME: " + the_time + "\n" + "TITLE: " + the_title + "\n" + "URL: " + the_place + "\n" + "SELECTED TEXT: " + the_text + "\n" );		
 
-		download(JSON.stringify(dict, Object.keys(dict).sort(),2),downloadName(),"application/json");
+		download(JSON.stringify(dict, undefined,2),downloadName(),"application/json");
 	}
 )();
