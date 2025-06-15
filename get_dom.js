@@ -27,7 +27,7 @@ javascript:
 		sortedkeys = Object.keys(dict).sort();
 		for (i in sortedkeys)
 		{
-			dict[sortedkeys[i]] = Object.keys(dict[sortedkeys[i]]).sort();
+			dict[sortedkeys[i]] = dict[sortedkeys[i]].sort();
 		}
 		console.log(dict);
 		for (i in dict)

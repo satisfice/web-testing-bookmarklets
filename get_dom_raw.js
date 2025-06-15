@@ -6,7 +6,7 @@ javascript:
 		{
   			var hostname = window.location.hostname.substring(0, window.location.hostname.lastIndexOf('.')).replaceAll(".", "_");
   			var pathname = window.location.pathname ? window.location.pathname.replaceAll('/', '_'): "_";
-	    		var filename = hostname + pathname + "_DOM_raw.json";
+	    		var filename = hostname + pathname + "_DOM_raw.html";
 			return filename;
 		}
 		function download(text, name, type) 
@@ -24,6 +24,6 @@ javascript:
 		the_time = Date().valueOf();
 		console.log("*** Test Stamp ***\n(Downloaded raw DOM)\n" + "TIME: " + the_time + "\n" + "TITLE: " + the_title + "\n" + "URL: " + the_place + "\n" + "SELECTED TEXT: " + the_text + "\n" );		
 
-		download(dict,downloadName(),"application/json");
+		download(dict,downloadName(),"text/html");
 	}
 )();
