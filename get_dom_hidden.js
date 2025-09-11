@@ -17,7 +17,7 @@ javascript:
 			a.download = name;  
 			a.click()
 		}
-		dom = document.querySelectorAll('*[style*="hidden"], *[style*="display:none"]'); 
+		dom = document.querySelectorAll('*[style*="hidden"], *[style*="display: none"]'); 
 		const dict = {};
 		for (i=0;i<dom.length;i++)
 		{
