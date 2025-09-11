@@ -37,6 +37,8 @@ Go to any web page and run any of these bookmarklets by selecting the bookmark t
 
 - **Get DOM Just Innertext:** Lists all the text associated with each element of the DOM, except presented as a text file instead of a JSON so that the text is not escaped. This is helpful when you intend to put that text to use.
 
+- **Produce Counterstring:** Creates a counterstring with a specified length (with a delimiter you specify, if you don't like the default). A counterstring is a string that counts its own length. Quite helpful for testing fields using large inputs.
+
 - **Get Storage:** Dumps the contents of Javascript-visible cookies, Local Storage, and Session Storage. Local storage can be a gold mine of test data, or categories of test data, that you will need to test with.
 
 - **Console Stamps:** These dump the following info to the console, which is useful during testing: current page title, current URL, current time, and any selected text on the page. It also prompts you in case you want to enter a note. Great for in situ notetaking. This is especially useful if you have enabled the Chrome debug log.
